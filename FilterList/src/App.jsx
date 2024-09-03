@@ -9,6 +9,9 @@ function App() {
   return (
     <>
       <div>
+        <DisplayFilteredStrings stringArray= {defaultArray}></DisplayFilteredStrings>
+      </div>
+      <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -33,3 +36,19 @@ function App() {
 }
 
 export default App
+
+const defaultArray = [
+  "String 1",
+  "String 2",
+  "String 3"
+]
+
+function DisplayFilteredStrings({stringArray}) {
+  return (
+    <ul>
+      {stringArray.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  )
+}
